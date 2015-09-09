@@ -42,6 +42,7 @@
       rel="stylesheet">
     <link rel="stylesheet" href="material.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
