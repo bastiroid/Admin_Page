@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="http://dev.mw.metropolia.fi/floorball/Admin_Page/css/material.min.css">
     <link rel="stylesheet" href="http://dev.mw.metropolia.fi/floorball/Admin_Page/css/styles.css">
     <link rel="stylesheet" href="http://dev.mw.metropolia.fi/floorball/Admin_Page/css/app.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">

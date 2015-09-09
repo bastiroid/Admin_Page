@@ -1,40 +1,51 @@
 <?php require VIEW_ROOT . '/templates/header.php'; ?>
 
-	<h2>Add page</h2>
+	<h3>Add page</h3>
+        <div class="mdl-grid">      
 
-	<form action="<?php echo BASE_URL; ?>admin/add.php" method="POST" autocomplete="off">
-		<label for ="title">
-			Title
-			<input type="text" name="title" id="title">
-		</label>
-		<br><br>
-		<label for ="f_id">
-			Folder
-			<input type="text" name="f_id" id="f_id">
-		</label>
-		<br><br>
-		<label for ="i_id">
-			Image
-			<input type="text" name="i_id" id="i_id">
-		</label>
-		<br><br>
-		<label for ="label">
-			Label
-			<input type="text" name="label" id="label">
-		</label>
-		<br><br>
-		<label for ="slug">
-			Slug
-			<input type="text" name="slug" id="slug">
-		</label>
-		<br><br>
-		<label for ="body">
-			Body
-			<textarea name="body" id="body" cols="30" rows="10"></textarea>
-		</label>
-		<br><br>
-		<input type="submit" value="Add">
+ <div class="mdl-cell mdl-cell--6-col">
 
-	</form>
+  <form action="<?php echo BASE_URL; ?>admin/add.php" method="POST" autocomplete="off">
+    <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="title" />
+    <label class="mdl-textfield__label" for="title">Title</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="f_id" />
+    <label class="mdl-textfield__label" for="f_id">Folder</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="i_id" />
+    <label class="mdl-textfield__label" for="i_id">Image</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="label" />
+    <label class="mdl-textfield__label" for="label">Label</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="slug" />
+    <label class="mdl-textfield__label" for="slug">Slug</label>
+    </div>
+    <br>
+    <div class="mdl-textfield mdl-js-textfield">
+    <textarea class="mdl-textfield__input" type="text" rows= "4" id="body" ></textarea>
+    <label class="mdl-textfield__label" for="body">Body...</label>
+  </div>
+    <br>
+      <button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+        <i class="material-icons" role="presentation">add</i>
+        <span class="visuallyhidden">Add</span>
+      </button>
+
+  </form>
+ 
+ </div>
+  <div class="mdl-cell mdl-cell--6-col">
+    
+  </div>
 
 <?php require VIEW_ROOT . '/templates/footer.php'; ?>
