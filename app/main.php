@@ -5,7 +5,7 @@ ini_set('display_errors', 'On');
 
 define('APP_ROOT', __DIR__);
 define('VIEW_ROOT', APP_ROOT . '/views');
-define('BASE_URL', 'http://dev.mw.metropolia.fi/floorball/Web-Prototype/');
+define('BASE_URL', 'http://dev.mw.metropolia.fi/floorball/Admin_Page/');
 
 $host = 'localhost';
 $dbname = 'floorball';

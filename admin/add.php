@@ -4,24 +4,28 @@ require '../app/main.php';
 
 if (!empty($_POST)) {
 
-	$label = $_POST['label'];
 	$title = $_POST['title'];
 	$body = $_POST['body'];
+	$label = $_POST['label'];
 	$slug = $_POST['slug'];
+	$f_id = $_POST['f_id'];
+	$i_id = $_POST['i_id'];
 
-	$insertPage = $db->prepare("
-		INSERT INTO cards (label, title, body, slug)
-		VALUES (:label, :title, :body, :slug)
+	$insertCard = $db->prepare("
+		INSERT INTO Cards
+		VALUES ('', :title, :body, :label, :slug, :f_id, :i_id)
 		");
 
-	$insertPage->execute([
-		'label' => $label,
+	$insertCard->execute([
 		'title' => $title,
 		'body' => $body,
-		'slug' => $slug
+		'label' => $label,
+		'slug' => $slug,
+		'f_id' => $f_id,
+		'i_id' => $i_id
 	]);
 
-	header('Location: ' . BASE_URL . '/admin/list.php');
+	header('Location: ' . BASE_URL . 'admin/list.php');
 }
 
 

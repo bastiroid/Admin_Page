@@ -3,29 +3,39 @@
 require '../app/main.php';
 
 if (!empty($_POST)) {
-	$id = $_POST['id'];
-	$label = $_POST['label'];
+
+	$p_id = $_POST['p_id'];
 	$title = $_POST['title'];
 	$body = $_POST['body'];
-	$slug = $_POST['slug'];
+	$label = $_POST['label'];
+	$slug = $_POST['slug'];  
+	$f_id = $_POST['f_id'];
+	$i_id = $_POST['i_id'];
 
-	$updatePage = $db->prepare("
-			UPDATE cards
+
+
+	$updateCard = $db->prepare("
+			UPDATE Cards
 			SET
-				label = :label,
 				title = :title,
 				body = :body,
-				slug = :slug
-			WHERE id = :id
+				label = :label,
+				slug = :slug,
+				f_id = :f_id,
+				i_id = :i_id
+			WHERE p_id = :p_id;
 		");
 
-	$updatePage->execute([
-			'id'	=> $id,
-			'label' => $label,
+	$updateCard->execute([
+			'p_id' => $p_id,
 			'title' => $title,
 			'body' => $body,
+			'label' => $label,
 			'slug' => $slug,
+			'f_id' => $f_id,
+			'i_id' => $i_id
 		]);
+
 
 	header('Location: ' . BASE_URL . 'admin/list.php');
 }
@@ -35,15 +45,16 @@ if (!isset($_GET['id'])) {
 	die();
 }
 
-$page = $db->prepare("
-	SELECT id, label, title, body, slug
-	FROM cards
-	WHERE id = :id
+$card = $db->prepare("
+	SELECT p_id, title, body, label, slug, f_id, i_id
+	FROM Cards
+	WHERE p_id = :id;
 	");
 
-$page->execute(['id' => $_GET['id']]);
+$card->execute(['id' => $_GET['id']]);
 
-$page = $page->fetch(PDO::FETCH_ASSOC);
+$card = $card->fetch(PDO::FETCH_ASSOC);
+
 
 
 require VIEW_ROOT . '/admin/edit.php';

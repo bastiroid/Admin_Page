@@ -2,19 +2,27 @@
 
 require 'app/main.php';
 
+
+$cards = $db->query("
+  SELECT p_id, f_id, title, body, label, slug
+  FROM Cards
+  ")->fetchAll(PDO::FETCH_ASSOC);
+
 //check if the slug is empty
-if (empty($_GET['page'])) {
+if (empty($_GET['id'])) {
 	$page = false;
 } else {
-	$slug = $_GET['page'];
+	$f_id = $_GET['id'];
 
 	$page = $db->prepare("
 		SELECT * 
-		FROM pages
-		WHERE slug = :slug
+		FROM Folders
+		WHERE f_id = :f_id
 	");
 
-	$page->execute(['slug' => $slug]);
+
+
+	$page->execute(['f_id' => $f_id]);
 
 	$page = $page->fetch(PDO::FETCH_ASSOC);
 
