@@ -3,12 +3,12 @@
 require '../app/main.php';
 
 if (isset($_GET['id'])) {
-	$deletePage = $db->prepare("
-			DELETE FROM cards
-			WHERE id = :id
+	$deleteCard = $db->prepare("
+			DELETE FROM Cards
+			WHERE c_id = :id;
 		");
 
-	$deletePage->execute(['id' => $_GET['id']]);
+	$deleteCard->execute(['id' => $_GET['id']]);
 }
 
-header('Location: ' . BASE_URL . '/admin/list.php');
+header('Location: ' . BASE_URL . 'admin/list.php');

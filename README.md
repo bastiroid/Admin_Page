@@ -1,4 +1,5 @@
 # Admin_Page
+<<<<<<< HEAD
 Admin page for the Phonegap app
 
 ==============================================================
@@ -33,4 +34,14 @@ admin/list.php - lists cards from database
 
 
 
+=======
+
+Admin page
+
+=========================================================
+
+
+app/main.php - Connection to the database
+app/functions.php - usefull functions
+>>>>>>> liharts/master
 

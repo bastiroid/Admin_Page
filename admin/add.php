@@ -4,24 +4,38 @@ require '../app/main.php';
 
 if (!empty($_POST)) {
 
-	$label = $_POST['label'];
 	$title = $_POST['title'];
+	$s_id = $_POST['s_id'];
 	$body = $_POST['body'];
+	$label = $_POST['label'];
 	$slug = $_POST['slug'];
+	$tdesc = $_POST['tdesc'];
+	$imageName = basename($_FILES['files']['name']);
+	$dir = "../data/";
+	$target_file = $dir . basename($_FILES['files']['name']);
+	$image_dir = BASE_URL . "data/" . $imageName;
 
-	$insertPage = $db->prepare("
-		INSERT INTO cards (label, title, body, slug)
-		VALUES (:label, :title, :body, :slug)
-		");
+		if (move_uploaded_file($_FILES['files']['tmp_name'], $target_file)) {
 
-	$insertPage->execute([
-		'label' => $label,
-		'title' => $title,
-		'body' => $body,
-		'slug' => $slug
-	]);
+			$insertCard = $db->prepare("
+				INSERT INTO Cards
+				VALUES ('', :s_id, :title, :body, :label, :slug, :imageName, :image_dir, :tdesc
+				");
 
-	header('Location: ' . BASE_URL . '/admin/list.php');
+			$insertCard->execute([
+					's_id' => $s_id,
+					'title' => $title,
+					'body' => $body,
+					'label' => $label,
+					'slug' => $slug,
+					'imageName' => $imageName,
+					'image_dir' => $image_dir,
+					'tdesc' => $tdesc
+				]);
+
+			header('Location: ' . BASE_URL . 'admin/list.php');
+
+		}
 }
 
 

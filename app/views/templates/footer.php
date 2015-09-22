@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 </div>
                     <!-- /.col-lg-12 -->
                 </div>
@@ -24,4 +25,13 @@
 
 </body>
 
+=======
+              </div>   
+            </div>
+          </section>
+        </div>    
+      </main>
+    </div>
+  </body>
+>>>>>>> liharts/master
 </html>

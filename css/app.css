@@ -44,6 +44,7 @@
   border-radius: 2px;
   padding: 80px 56px;
   margin-bottom: 80px;
+<<<<<<< HEAD
 }
 
 .demo-layout.is-small-screen .demo-content {
@@ -58,21 +59,42 @@
   padding-left: 40px;
 }
 
+=======
+}
+
+.demo-layout.is-small-screen .demo-content {
+  padding: 40px 28px;
+}
+
+.demo-content h3 {
+  margin-top: 48px;
+}
+
+.demo-footer {
+  padding-left: 40px;
+}
+
+>>>>>>> liharts/master
 .demo-footer .mdl-mini-footer--link-list a {
   font-size: 13px;
 }
 
 h1 {
+<<<<<<< HEAD
 	margin-top: 100px;
 	color: #3399FF;
+=======
+  margin-top: 100px;
+  color: #3399FF;
+>>>>>>> liharts/master
 }
 
 table {
-	margin-left: 15%;
-	margin-top: 50px;
+  margin-left: 15%;
+  margin-top: 50px;
 }
 
 .addNew {
-	margin-left: 15%;
-	margin-top: 50px;
+  margin-left: 15%;
+  margin-top: 50px;
 }
