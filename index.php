@@ -5,8 +5,8 @@ require 'app/main.php';
 
 //load all cards into $pages
 $pages = $db->query("
-	SELECT f_id, title
-	FROM Folders
+	SELECT s_id, title
+	FROM Sections
 	")->fetchAll(PDO::FETCH_ASSOC);
 
 

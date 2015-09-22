@@ -4,13 +4,13 @@ require '../app/main.php';
 
 if (!empty($_POST)) {
 
-	$p_id = $_POST['p_id'];
+	$c_id = $_POST['c_id'];
 	$title = $_POST['title'];
 	$body = $_POST['body'];
 	$label = $_POST['label'];
 	$slug = $_POST['slug'];  
-	$f_id = $_POST['f_id'];
-	$i_id = $_POST['i_id'];
+	$s_id = $_POST['s_id'];
+	$tdesc = $_POST['tdesc'];
 
 
 
@@ -21,19 +21,19 @@ if (!empty($_POST)) {
 				body = :body,
 				label = :label,
 				slug = :slug,
-				f_id = :f_id,
-				i_id = :i_id
-			WHERE p_id = :p_id;
+				tdesc = :tdesc,
+				s_id = :s_id
+			WHERE c_id = :c_id;
 		");
 
 	$updateCard->execute([
-			'p_id' => $p_id,
+			'c_id' => $c_id,
 			'title' => $title,
 			'body' => $body,
 			'label' => $label,
 			'slug' => $slug,
-			'f_id' => $f_id,
-			'i_id' => $i_id
+			'tdesc' => $tdesc,
+			's_id' => $s_id
 		]);
 
 
@@ -46,9 +46,9 @@ if (!isset($_GET['id'])) {
 }
 
 $card = $db->prepare("
-	SELECT p_id, title, body, label, slug, f_id, i_id
+	SELECT c_id, title, body, label, slug, s_id, tdesc
 	FROM Cards
-	WHERE p_id = :id;
+	WHERE c_id = :id;
 	");
 
 $card->execute(['id' => $_GET['id']]);

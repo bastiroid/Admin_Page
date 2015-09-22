@@ -5,7 +5,7 @@ require '../app/main.php';
 if (isset($_GET['id'])) {
 	$deleteCard = $db->prepare("
 			DELETE FROM Cards
-			WHERE p_id = :id;
+			WHERE c_id = :id;
 		");
 
 	$deleteCard->execute(['id' => $_GET['id']]);

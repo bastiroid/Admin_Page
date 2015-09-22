@@ -13,8 +13,8 @@
 
         <?php foreach ($cards as $card): ?> <!-- print on screen every folder -->
 
-          <?php if($page['f_id'] == $card['f_id']) { ?>
-            <li><a href="<?php echo BASE_URL;?>card.php?id=<?php echo $page['f_id']; ?>&card=<?php echo $card['slug']; ?>"><?php echo $card['title']; ?></a></li>
+          <?php if($page['s_id'] == $card['s_id']) { ?>
+            <li><a href="<?php echo BASE_URL;?>card.php?id=<?php echo $page['s_id']; ?>&card=<?php echo $card['slug']; ?>"><?php echo $card['title']; ?></a></li>
           <?php } ?>
       <?php endforeach; ?>
       </ul>

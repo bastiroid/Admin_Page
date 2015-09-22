@@ -9,7 +9,7 @@
 				<!-- Loop for specific folders -->
 
 			<?php foreach ($pages as $page): ?> <!-- print on screen every folder -->
-				<li><a href="<?php echo BASE_URL;?>page.php?id=<?php echo $page['f_id']; ?>"><?php echo $page['title']; ?></a></li>
+				<li><a href="<?php echo BASE_URL;?>page.php?id=<?php echo $page['s_id']; ?>"><?php echo $page['title']; ?></a></li>
 			<?php endforeach; ?>
 		</ul>
 	<?php endif; ?>

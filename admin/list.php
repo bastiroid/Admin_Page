@@ -4,7 +4,7 @@
 require '../app/main.php';
 
 $cards = $db->query("
-		SELECT p_id, label, title, body, slug, f_id, i_id
+		SELECT c_id, label, title, body, slug, s_id
 		FROM Cards
 	")->fetchAll(PDO::FETCH_ASSOC);
 
